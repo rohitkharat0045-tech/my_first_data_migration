@@ -1,0 +1,5 @@
+order_id,customer_id,order_date,order_status,channel,coupon_code,order_total
+101,1,2026-01-10 10:10:10,placed,web,,1200.50
+102,,2026-01-10 11:10:10,delivered,mobile,SAVE20,ABC
+103,3,,shipped,store,,500
+104,4,2026-01-10 13:10:10,,web,,700

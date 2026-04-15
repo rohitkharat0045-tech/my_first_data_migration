@@ -66,7 +66,6 @@ def extract_schema(db_path):
     # 5. Close the database connection
     conn.close()
     # 6. Print and return the schema
-    print(schema)
     # output: {'users': [(0, 'id', 'INTEGER', 0, None, 1), (1, 'name', 'TEXT', 0, None, 0), (2, 'age', 'INTEGER', 0, None, 0)]}
     return schema
 
