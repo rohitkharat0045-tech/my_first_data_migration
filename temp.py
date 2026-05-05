@@ -1,6 +1,7 @@
 import sqlite3
 
 # check data in new database
+# print("Target Database")
 # conn = sqlite3.connect('data/target.db')
 # cur = conn.cursor()
 
@@ -12,6 +13,7 @@ import sqlite3
 
 # create the new table and database
 
+print("Source Database")
 conn = sqlite3.connect('data/source.db')
 cur = conn.cursor()
 
@@ -32,6 +34,7 @@ cur = conn.cursor()
 # cur.execute("DROP TABLE payments")
 # cur.execute("DROP TABLE returns")
 cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
+# cur.execute("select * from orders")
 print(cur.fetchall())
 
 
