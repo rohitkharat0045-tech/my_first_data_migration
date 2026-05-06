@@ -54,10 +54,23 @@ echo -e "${NC}"
 
 # ==============================================================
 
-echo -e "${GREEN}Install Dependencies...${NC}"
-python3 -m ensurepip --upgrade
-python3 -m pip install --upgrade pip
-python3 -m pip install -r requirements.txt
+REQ_HASH_FILE=".req_hash"
+
+CURRENT_HASH=$(md5sum requirements.txt | awk '{print $1}')
+
+if [ -f "$REQ_HASH_FILE" ] && [ "$CURRENT_HASH" == "$(cat $REQ_HASH_FILE)" ]; then
+    echo -e "${GREEN}✅ No changes in requirements. Skipping install.${NC}"
+else
+    echo -e "${YELLOW}⚙️ Installing dependencies...${NC}"
+
+    python3 -m ensurepip --upgrade
+    python3 -m pip install --upgrade pip
+    python3 -m pip install -r requirements.txt
+
+    echo $CURRENT_HASH > $REQ_HASH_FILE
+
+    echo -e "${GREEN}✅ Dependencies updated.${NC}"
+fi
 echo -e "${NC}"
 
 # ==============================================================
