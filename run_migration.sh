@@ -38,11 +38,11 @@ echo -e "${NC}"
 
 read -p "Enter your choice (1 or 2): " choice
 
-if [ "$choice" -eq 1 ]; then
+if [[ "$choice" == "1" ]]; then
     echo -e "${GREEN}Activating Windows virtual environment...${NC}"
     source venv/Scripts/activate
 
-elif [ "$choice" -eq 2 ]; then
+elif [[ "$choice" == "2" ]]; then
     echo -e "${GREEN}Activating Linux/Mac virtual environment...${NC}"
     source venv/bin/activate
 
@@ -55,13 +55,19 @@ echo -e "${NC}"
 # ==============================================================
 
 echo -e "${GREEN}Install Dependencies...${NC}"
-pip install -r requirements.txt
+python3 -m ensurepip --upgrade
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 echo -e "${NC}"
 
 # ==============================================================
 
-cd src
-
+if [ -d "src" ]; then
+    cd src
+else
+    echo "❌ src folder not found"
+    exit 1
+fi
 # ==============================================================
 # 🚀 Run your actual process here (example)
 echo -e "${GREEN}Running migration...${NC}"
