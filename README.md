@@ -57,7 +57,7 @@ db-migration-tool/
 ### 1. Clone Repository
 
 ```
-git clone https://github.com/your-username/db-migration-tool.git
+git clone https://github.com/vikaslokhande2004/db-migration-tool.git
 cd db-migration-tool
 ```
 
