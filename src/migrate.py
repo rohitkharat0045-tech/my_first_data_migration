@@ -182,7 +182,7 @@ def run_migration():
                 rows = src_cursor.fetchall()
 
                 cur = tgt_conn.cursor()
-
+                print(f"📂 Processing Table : {table.upper()}")
                 for row in rows:
                     try:
                         # placeholders = ','.join(['%s'] * len(row))
