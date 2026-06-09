@@ -57,8 +57,7 @@ db-migration-tool/
 ### 1. Clone Repository
 
 ```
-git clone https://github.com/vikaslokhande2004/db-migration-tool.git
-cd db-migration-tool
+git clone https://github.com/rohitkharat0045-tech/my_first_data_migration.git cd db-migration-tool
 ```
 
 ### 2. Create Virtual Environment
